@@ -1,0 +1,113 @@
+body{
+	font-family: 'Proxima Nova',sans-serif;
+}
+h3,h4,h5,h6{
+	margin: 0;
+}
+
+ /* width */
+::-webkit-scrollbar {
+  width: 5px !important;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+
+.modal-title{
+	font-weight: 400 !important;
+}
+
+.site-header .site-header-search-container {
+     width: auto !important;
+     float: left;
+}
+
+.control-panel .page-content{
+	padding-right: 0;
+	padding-bottom: 0;
+}
+.content-box{
+	min-height: 100vh !important;
+}
+
+footer{
+	background-color: #fff;
+	padding: 10px 20px;
+}
+
+
+.flash-message{
+	position: absolute;
+	top: 85px;
+	right: 15px;
+	min-width: 300px;
+}
+
+.response-flash,.response-flash-unable {
+	position: absolute; 
+	top: 0; 
+	left: 0;
+	background: green; 
+	z-index: 999;
+	width: 100%;
+	color: #fff; 
+	text-align: center; 
+	padding: 1%;
+	display: none;
+}
+
+.response-flash-unable{
+	background: #fa424a !important;
+}
+
+.hall-img-style{
+	border-radius: 5px;box-shadow: 0px 10px 20px -6px black;
+}
+
+
+
+.active-menu{
+	background-color: #ecf2f5;
+}
+
+
+.panel-title{
+	padding: 5px;
+    font-size: 150%;
+    letter-spacing: -1px;
+    font-weight: 600;
+    color: #6d6d6d;
+}
+
+
+.featured-title {
+    background: rgba(0,0,0,0.5);
+    width: 95%;
+    margin-left: 15px;
+    padding: 10px 0px;
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+
+/*Nepali datepicker*/
+[placeholder], input[placeholder]{
+	color: #000 !important;
+}
+
