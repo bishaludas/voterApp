@@ -18,17 +18,18 @@ Route::get('/get-voters/{id}/confirm', 'Frontend\GetDataController@confirmVoter'
 Route::post('/get-voters/{id}', 'Frontend\GetDataController@showVoter')->name('voter.show');
 Route::post('/get-voters-no/{id}', 'Frontend\GetDataController@showVoterNo');
 
-Route::get('login', 'Frontend\AdminLoginController@login')->name('login.page');
+// Login
+Route::get('login', 'Frontend\AdminLoginController@login')->name('login');
 Route::post('login', 'Frontend\AdminLoginController@attempLogin');
 Route::get('logout', 'Frontend\AdminLoginController@logout')->name('logout');
-
-
-
-// BACKEND
 
 // search requests
 Route::get('filterData', 'Home\HomeController@getfilterData')->name('filterData');
 Route::post('getVoters', 'Home\HomeController@getVoters');
+
+// BACKEND
+Route::group(['middleware'=>'auth'], function(){
+
 
 Route::resource('state', 'state\StateController');
 Route::get('state/{state}/delete', 'state\StateController@delete')->name('state.delete');
@@ -57,3 +58,5 @@ Route::get('state-assembly/{id}/delete', 'Assembly\StateController@delete')->nam
 
 Route::resource('users', 'User\UserController');
 Route::get('users/{user}/delete', 'User\UserController@delete')->name('users.delete');
+});
+

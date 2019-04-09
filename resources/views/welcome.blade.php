@@ -4,7 +4,7 @@
 <div class="jumbotron">
     <div class="container">
         <h1>The home of the Nepal Government&#8217;s open data</h1>
-        <p>Here you will find data, tools, and resources to conduct research, develop web and mobile applications, design data visualizations, and more.</p>
+        <p>Here you will find data and resources to conduct research, develop web and mobile applications, design data visualizations, and more.</p>
 
         <div style="display: block !important; margin:0 !important; padding: 0 !important" id="wpp_popup_post_end_element"></div>  </div><!--/.container-->
     </div><!--/.jumbotron-->
@@ -132,9 +132,9 @@
                                 </article>
                             </div><!--/.highlight-->
                         </div>
-                        <div class="pull-right">
+                        {{-- <div class="pull-right">
                             <a href="/highlights" class="more-link" style="color:#fff;">More Highlights</a>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <!--/.container-->

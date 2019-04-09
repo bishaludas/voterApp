@@ -53,7 +53,7 @@
                         <li class="menu-contact"><a href="https://www.data.gov/contact" class="local-link">Contact</a></li>
                         <li class="menu-contact">
                             @if (!auth()->check())
-                                <a href="{{ route('login.page') }}" class="local-link">Login</a>
+                                <a href="{{ route('login') }}" class="local-link">Login</a>
                             @endif
                             @if (auth()->check())
                                 <a href="{{ route('logout') }}" class="local-link">Logout</a>
