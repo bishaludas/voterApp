@@ -86,7 +86,7 @@
 
                       <div class="dropdown user-menu">
                           <button class="dropdown-toggle" id="dd-user-menu" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              {{ucfirst(auth()->user()->eng_name)}}
+                              {{ucfirst(auth()->user()->eng_name ?? 'Admin')}}
                           </button>
                           <div class="dropdown-menu dropdown-menu-right">
                              {{--  <a class="dropdown-item" href="#"><i class="ion-android-person mr-2"></i></span>Profile</a>

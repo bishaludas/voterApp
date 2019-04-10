@@ -15,6 +15,7 @@
 					<th>Representative area</th>										
 					<th>Representative area no.</th>										
 					<th>District</th>										
+					<th>Description</th>										
 					<th width="100">Actions</th>
 				</tr>
 			</thead>
@@ -25,6 +26,7 @@
 					<td>{{$representative->name}}</td>
 					<td>{{$representative->representative_no}}</td>
 					<td>{{$representative->district->name}}</td>
+					<td><a href="{{ route('representative.details', $representative->id) }}">Add Description</a></td>
 					<td>
 						<div class="btn-group" role="group" aria-label="Basic example">
 						  <button type="button" class="btn btn-sm btn-secondary ajax-modal-box" 

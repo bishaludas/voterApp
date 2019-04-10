@@ -132,4 +132,15 @@ class RepresentativeController extends Controller
             'message'=>'Deleted.'
         ];
     }
+
+
+    public function addDescription($id){
+        $area = RepresentativeAssembly::findOrFail($id);
+        return view('entity.assembly.details.addDetails', compact('area'));
+    }
+
+    public function updateDescription(Request $request, $id){
+        return $request->all();
+    }
+
 }

@@ -29,34 +29,34 @@ Route::post('getVoters', 'Home\HomeController@getVoters');
 
 // BACKEND
 Route::group(['middleware'=>'auth'], function(){
+	Route::resource('state', 'state\StateController');
+	Route::get('state/{state}/delete', 'state\StateController@delete')->name('state.delete');
 
+	Route::resource('zone', 'zone\ZoneController');
+	Route::get('zone/{zone}/delete', 'zone\ZoneController@delete')->name('zone.delete');
 
-Route::resource('state', 'state\StateController');
-Route::get('state/{state}/delete', 'state\StateController@delete')->name('state.delete');
+	Route::resource('district', 'district\DistrictController');
+	Route::get('district/{district}/delete', 'district\DistrictController@delete')->name('district.delete');
 
-Route::resource('zone', 'zone\ZoneController');
-Route::get('zone/{zone}/delete', 'zone\ZoneController@delete')->name('zone.delete');
+	Route::resource('vdc-minicipality', 'minicipality\MunicipalityVdcController');
+	Route::get('minicipality/{minicipality}/delete', 'minicipality\MunicipalityVdcController@delete')->name('minicipality.delete');
 
-Route::resource('district', 'district\DistrictController');
-Route::get('district/{district}/delete', 'district\DistrictController@delete')->name('district.delete');
+	Route::resource('ward', 'ward\WardController');
+	Route::get('ward/{ward}/delete', 'ward\WardController@delete')->name('ward.delete');
 
-Route::resource('vdc-minicipality', 'minicipality\MunicipalityVdcController');
-Route::get('minicipality/{minicipality}/delete', 'minicipality\MunicipalityVdcController@delete')->name('minicipality.delete');
+	Route::resource('constituency-area', 'constituency\ConstituencyAreaController');
+	Route::get('constituency-area/{area}/delete', 'constituency\ConstituencyAreaController@delete')->name('area.delete');
 
-Route::resource('ward', 'ward\WardController');
-Route::get('ward/{ward}/delete', 'ward\WardController@delete')->name('ward.delete');
+	// Assembly
+	Route::resource('representative-assembly', 'Assembly\RepresentativeController');
+	Route::get('representative/{id}/description', 'Assembly\RepresentativeController@addDescription')->name('representative.details');
+	Route::patch('representative/{id}/description', 'Assembly\RepresentativeController@updateDescription');
+	Route::get('representative-assembly/{id}/delete', 'Assembly\RepresentativeController@delete')->name('representative.delete');
 
-Route::resource('constituency-area', 'constituency\ConstituencyAreaController');
-Route::get('constituency-area/{area}/delete', 'constituency\ConstituencyAreaController@delete')->name('area.delete');
+	Route::resource('state-assembly', 'Assembly\StateController');
+	Route::get('state-assembly/{id}/delete', 'Assembly\StateController@delete')->name('state-assembly.delete');
 
-// Assembly
-Route::resource('representative-assembly', 'Assembly\RepresentativeController');
-Route::get('representative-assembly/{id}/delete', 'Assembly\RepresentativeController@delete')->name('representative.delete');
-
-Route::resource('state-assembly', 'Assembly\StateController');
-Route::get('state-assembly/{id}/delete', 'Assembly\StateController@delete')->name('state-assembly.delete');
-
-Route::resource('users', 'User\UserController');
-Route::get('users/{user}/delete', 'User\UserController@delete')->name('users.delete');
+	Route::resource('users', 'User\UserController');
+	Route::get('users/{user}/delete', 'User\UserController@delete')->name('users.delete');
 });
 
