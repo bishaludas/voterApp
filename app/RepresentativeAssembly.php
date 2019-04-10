@@ -9,7 +9,7 @@ class RepresentativeAssembly extends Model
 {
 	use SoftDeletes;
 	
-    protected $fillable = ['name','representative_no', 'district_id'];
+    protected $fillable = ['name','representative_no', 'district_id', 'description'];
 
     public function district(){
     	return $this->belongsTo(District::class);

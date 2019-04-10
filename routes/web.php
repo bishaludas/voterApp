@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'Home\HomeController@index')->name('home');
+Route::get('/home', 'Home\HomeController@index');
 // FrontEnd
 Route::get('/get-voters', 'Frontend\GetDataController@getVoters');
 Route::get('/get-voters/{id}/confirm', 'Frontend\GetDataController@confirmVoter')->name('get.confirmation');
@@ -26,6 +27,11 @@ Route::get('logout', 'Frontend\AdminLoginController@logout')->name('logout');
 // search requests
 Route::get('filterData', 'Home\HomeController@getfilterData')->name('filterData');
 Route::post('getVoters', 'Home\HomeController@getVoters');
+
+// Topic Data
+Route::get('topic', 'Frontend\TopicController@filterData')->name('topic.filter');
+Route::get('topic/getData', 'Frontend\TopicController@getfilterData')->name('topic.filterData');
+
 
 // BACKEND
 Route::group(['middleware'=>'auth'], function(){
@@ -58,5 +64,8 @@ Route::group(['middleware'=>'auth'], function(){
 
 	Route::resource('users', 'User\UserController');
 	Route::get('users/{user}/delete', 'User\UserController@delete')->name('users.delete');
+
+	Route::get('/laravel-filemanager', '\UniSharp\LaravelFilemanager\Controllers\LfmController@show');
+    Route::post('/laravel-filemanager/upload', '\UniSharp\LaravelFilemanager\Controllers\UploadController@upload');
 });
 

@@ -140,7 +140,11 @@ class RepresentativeController extends Controller
     }
 
     public function updateDescription(Request $request, $id){
-        return $request->all();
+        $input =  $request->all();
+        $area = RepresentativeAssembly::findOrFail($id);
+       $area->update($input);
+
+       return back();
     }
 
 }

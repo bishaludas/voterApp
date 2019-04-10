@@ -6,6 +6,7 @@ use App\ConstituencyArea;
 use App\District;
 use App\Http\Controllers\Controller;
 use App\MunicipalityVdc;
+use App\RepresentativeAssembly;
 use App\User;
 use App\Ward;
 use Illuminate\Http\Request;
@@ -21,6 +22,16 @@ class HomeController extends Controller
 
     public function getfilterData(Request $request){
     	$input =  $request->all();
+        if ($input['type'] == "district") {
+            $district = District::where('zone_id', $input['data'])->pluck('name', 'id')->all();
+            return view('partials.getDistrict', compact('district'));
+        }
+
+        if ($input['type'] == "area") {
+            $area = RepresentativeAssembly::where('district_id', $input['data'])->pluck('name', 'id')->all();
+            return view('partials.getConstituencyArea', compact('area'));
+        }
+
     	if ($input['type'] == "municipality") {
     	 	$municipality = MunicipalityVdc::where('district_id', $input['data'])->pluck('name', 'id')->all();
     	 	return view('partials.getMunicipality', compact('municipality'));

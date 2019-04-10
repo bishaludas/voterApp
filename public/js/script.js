@@ -73,7 +73,15 @@ $(function(){
         var id = $(this).children("option:selected").val();
        
         $.get(url,{data : id, type : type},function(response){
-            // console.log(response);
+            console.log(response);
+            if (type == "district") {
+                $('.filterDistrict').html(response);
+            }
+
+            if (type == "area") {
+                $('.filterConstituencyArea').html(response);
+            }
+
             if (type == "municipality") {
                 $('.filterMunicipality').html(response);
             }

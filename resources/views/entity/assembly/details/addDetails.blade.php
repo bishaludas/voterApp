@@ -20,7 +20,11 @@
 		{{Form::close()}}
     </div>
 
-    @include('includes.tinymce');
+    
+@stop
+
+@section('script')
+@include('includes.tinymce');
 @stop
 
 

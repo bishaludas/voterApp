@@ -9,6 +9,10 @@ use Illuminate\Support\Facades\Auth;
 
 class AdminLoginController extends Controller
 {
+    public function __construct(){
+        $this->middleware('guest')->except('logout');
+    }
+    
     public function login(){
     	return view('frontend.auth.login');
     }

@@ -82,19 +82,19 @@
                 </div>
                 <ul class="topics">
                     <li>
-                        <a href="#"><i class="ion-ios-people"></i><br><span>Population</span></a>
+                        <a href="{{ route('topic.filter') }}"><i class="ion-ios-people"></i><br><span>Population</span></a>
                     </li>
                     <li>
-                        <a href="/climate/"><i class="ion-plane"></i><span>Airports</span></a>
+                        <a href="{{ route('topic.filter') }}"><i class="ion-plane"></i><span>Airports</span></a>
                     </li>
                     <li>
-                        <a href="/consumer/"><i class="ion-android-car"></i><span>Roads</span></a>
+                        <a href="{{ route('topic.filter') }}"><i class="ion-android-car"></i><span>Roads</span></a>
                     </li>
                     <li >
-                        <a href="/ecosystems/"><i class="ion-ios-home"></i><span>Places</span></a>
+                        <a href="{{ route('topic.filter') }}"><i class="ion-ios-home"></i><span>Places</span></a>
                     </li>
                     <li>
-                        <a href="/education/"><i class="ion-earth"></i><span>Rivers</span></a>
+                        <a href="{{ route('topic.filter') }}"><i class="ion-earth"></i><span>Rivers</span></a>
                     </li>                                           
                 </ul>
 

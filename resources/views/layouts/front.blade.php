@@ -42,16 +42,31 @@
                         <li class="dropdown yamm-fw menu-topics">
                             <a class="dropdown-toggle local-link" data-toggle="dropdown" data-target="#" href="https://www.data.gov/communities/">Topics <b class="caret"></b></a>
                             <ul class="dropdown-menu topics">
-                                <li class="menu-agriculture topic-food"><a href="https://www.data.gov/food/" class="local-link"><i></i><span>Agriculture</span></a></li>
-                                <li class="menu-climate topic-climate"><a href="https://www.data.gov/climate/" class="local-link"><i></i><span>Climate</span></a></li>
-                                <li class="menu-consumer topic-consumer"><a href="https://www.data.gov/consumer/" class="local-link"><i></i><span>Consumer</span></a></li>
-                                <li class="menu-ecosystems topic-ecosystems"><a href="https://www.data.gov/ecosystems/" class="local-link"><i></i><span>Ecosystems</span></a></li>
-                                <li class="menu-education topic-education"><a href="https://www.data.gov/education/" class="local-link"><i></i><span>Education</span></a></li>
+                                <li>
+                                    <a href="{{ route('topic.filter') }}"><i class="ion-ios-people"></i><br><span>Population</span></a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('topic.filter') }}"><i class="ion-plane"></i><span>Airports</span></a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('topic.filter') }}"><i class="ion-android-car"></i><span>Roads</span></a>
+                                </li>
+                                <li >
+                                    <a href="{{ route('topic.filter') }}"><i class="ion-ios-home"></i><span>Places</span></a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('topic.filter') }}"><i class="ion-earth"></i><span>Rivers</span></a>
+                                </li>          
                             </ul>
                         </li>
 
-                        <li class="menu-contact"><a href="https://www.data.gov/contact" class="local-link">Contact</a></li>
-                        <li class="menu-contact">
+                        <li class="menu-contact"><a href="" class="local-link">Contact</a></li>
+                         @if (auth()->check())
+                         <li>
+                            <a href="{{ route('state.index') }}" class="local-link">Admin</a>
+                        </li>
+                        @endif
+                        <li >
                             @if (!auth()->check())
                                 <a href="{{ route('login') }}" class="local-link">Login</a>
                             @endif
@@ -59,6 +74,7 @@
                                 <a href="{{ route('logout') }}" class="local-link">Logout</a>
                             @endif
                         </li>
+                       
                     </ul>        
                 </nav>
 
