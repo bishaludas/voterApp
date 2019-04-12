@@ -18,7 +18,7 @@ class AdminLoginController extends Controller
     }
 
     public function attempLogin(Request $request){
-    	
+
     	$rules = [
     		'email'=>'email|required',
     		'password'=>'required'];
@@ -28,15 +28,17 @@ class AdminLoginController extends Controller
 
     	// check if user Exists
     	$user = User::where('email', $request['email'])->first();
+
     	if (is_null($user)) {
-    		session::flash('message', "The user does not exist");
+    		session()->flash('message', "The user does not exist");
     		return back();
     	}
 
     	if (Auth::attempt($input)) {
     		return redirect()->route('state.index');
     	}else{
-    		return "fail";
+			sesion()->flash('message', 'Your credentials do not match');
+    		return back();
     	}
 
     }

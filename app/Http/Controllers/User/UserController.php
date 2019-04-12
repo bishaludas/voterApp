@@ -23,7 +23,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::where('citizenship_no', '!=', '0')->paginate(20);
+        $users = User::where('citizenship_no', '!=', '')->paginate(20);
         return view('users.index',compact('users'));
     }
 
@@ -53,14 +53,14 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {   
-        $input =  $request->all();        
+        $input =  $request->all();
         $rules = [
             'voter_no'=>'required',
             'nep_name'=>'required',
             'eng_name'=>'required',
             'dob'=>'required',
             'sex'=>'required',
-            'citizenship_no'=>'required',
+            'citizenship_no'=>"required|unique:users",
             'father_name'=>'required',
             'mother_name'=>'required',
             'image_path'=>'required',
@@ -191,7 +191,7 @@ class UserController extends Controller
             'eng_name'=>'required',
             'dob'=>'required',
             'sex'=>'required',
-            'citizenship_no'=>'required',
+            'citizenship_no'=>"required|unique:users,citizenship_no,$user->id,id",
             'father_name'=>'required',
             'mother_name'=>'required',
             
@@ -265,7 +265,7 @@ class UserController extends Controller
 
     public function destroy(User $user)
     {
-        $user->delete();
+        $user->forceDelete();
         return [
             'status'=>'success',
             'message'=>'User deleted.'

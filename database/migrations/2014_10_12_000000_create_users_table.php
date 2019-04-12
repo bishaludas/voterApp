@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('eng_name');
             $table->date('dob');
             $table->enum('sex',['male','female', 'other']);
-            $table->string('citizenship_no')->unique();
+            $table->string('citizenship_no');
             $table->string('father_name');
             $table->string('mother_name');
             $table->string('husband_wife')->nullable();

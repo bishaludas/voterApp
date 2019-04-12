@@ -28,7 +28,7 @@
 					<td>{{ucwords($user->sex)}}</td>
 					<td>{{ucwords($user->father_name)}}</td>
 					<td>{{ucwords($user->mother_name)}}</td>
-					<td>{{ucwords($user->pollingLocation->name)}}</td>
+					<td>{{ucwords($user->pollingLocation->name ?? null)}}</td>
 					<td>
 						<div class="btn-group" role="group" aria-label="Basic example">
 							{{Form::open(['method'=>'GET', 'action'=>['User\UserController@show', $user->id]])}}

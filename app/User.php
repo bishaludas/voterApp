@@ -20,7 +20,7 @@ class User extends Authenticatable
         'nep_name', 'eng_name', 'dob', 'sex','citizenship_no', 'father_name', 'mother_name',
         'husband_wife', 'image_path', 'state_id', 'district_id','vdc_municipality_id',
         'ward_id', 'constituency_id', 'rep_assembly_id', 'state_assembly_id', 'nep_date', 'eng_date',
-        'voter_no'
+        'voter_no', 'password'
     ];
 
     /**

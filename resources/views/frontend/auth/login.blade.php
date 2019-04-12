@@ -5,9 +5,7 @@
     <div class="header banner frontpage-search" >
         <div class="container ">
             <div class="row " style="background: #fff; min-height: 90vh; padding: 20px">
-                @if (session()->has('message'))
-                  <span class="alert alert-primary" style="display: block">  {{session('message')}}</span>
-                @endif
+
             	  	<h3 style="text-align: center; margin-bottom: 30px">Login</h3>  
             	  	<div class="col-md-offset-4 col-md-7">
             	  		{{ Form::open(['method'=>'POST', 'action'=>'Frontend\AdminLoginController@attempLogin'])}}
@@ -27,6 +25,12 @@
             	  			</div>
             	  		</div>
             	  		{{ Form::close()}}
+
+						<div class="alert alert-danger">
+							@if (session()->has('message'))
+								<span class="alert alert-primary" style="display: block">  {{session('message')}}</span>
+							@endif
+						</div>
             	  	</div>                     
             </div> 
         </div><!--/.container-->
